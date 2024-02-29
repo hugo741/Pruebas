@@ -75,8 +75,6 @@ Character* Combat::getTarget(Character* attacker) {
 void Combat::doCombat() {    
     cout<< "Inicio del combate" << endl;
     combatPrep();
-    int turnCount = 0; // initialize turn count
-    bool defenseBoosted = false; // flag to check if defense was boosted in the last turn
     while(participants.size() > 1){
         vector<Character*>::iterator it = participants.begin();
         while(it != participants.end()) {
@@ -86,21 +84,13 @@ void Combat::doCombat() {
                 target = ((Player *) *it)->selectTarget();
                 target = ((Player *) *it)->selectTarget(enemies);
             } else {
-                // If the enemy's health is less than 15%, there is a 40% chance they will defend
+                // TODO: si el enemigo tiene menos del 15% de vida, hay una probabilidad del 40% de que se defienda
                 if((*it)->getHealth() <= (*it)->getMaxHealth() * 0.15) {
-                    int randomNum = rand(); // generate a random number
-                    if(randomNum % 2 != 0) { // if the random number is odd
-                        (*it)->boostDefense();
-                        defenseBoosted = true;
-                    }
+                    (*it)->boostDefense();
                 }
                 target = ((Enemy *) *it)->selectTarget(partyMembers);
             }
             (*it)->doAttack(target);
-            if(defenseBoosted) { // if defense was boosted in the last turn
-                (*it)->resetDefense();
-                defenseBoosted = false;
-            }
             if(target->getHealth() <= 0){
                 it = participants.erase(remove(participants.begin(), participants.end(), target), participants.end());
                 if(target->getIsPlayer()){
@@ -121,6 +111,5 @@ void Combat::doCombat() {
                 it++;
             }
         }
-        turnCount++; // increment turn count at the end of each loop iteration
     }
 }
