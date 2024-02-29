@@ -19,7 +19,7 @@ private:
 
     void levelUp();
 public:
-    Player(string _name, int _health, int _attack, int _defense, int _speed);
+    Player(string _name, int _health, int _max_health, int _attack, int _defense, int _original_defense, int _speed, bool _isPlayer);
     void doAttack(Character *target) override;
     void takeDamage(int damage) override;
     Character* selectTarget(vector<Enemy*> possibleTargets);

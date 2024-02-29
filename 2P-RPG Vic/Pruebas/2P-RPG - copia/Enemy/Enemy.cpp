@@ -10,7 +10,7 @@
 using namespace std;
 using namespace combat_utils;
 
-Enemy::Enemy(string _name, int _health, int _attack, int _defense, int _speed, int _experience) : Character(_name, _health, _attack, _defense, _speed,  false) {
+Enemy::Enemy(string _name, int _health, int _max_health , int _attack, int _defense, int _original_defense, int _speed, int _experience, bool _isPlayer) : Character(_name, _health, _max_health, _attack, _defense, _original_defense, _speed, _isPlayer) {
     experience = _experience;
 }
 
