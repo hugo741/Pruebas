@@ -7,7 +7,7 @@
 
 using namespace std;
 
-Player::Player(string _name, int _health, int _attack, int _defense, int _speed) : Character(_name, _health, _attack, _defense, _speed, true) {
+Player::Player(string _name, int _health, int _max_health, int _attack, int _defense, int _original_defense, int _speed, bool _isPlayer): Character(_name, _health, _max_health, _attack, _defense, _original_defense, _speed, _isPlayer) {
     level = 1;
     experience = 0;
 }
