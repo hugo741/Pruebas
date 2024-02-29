@@ -1,0 +1,3 @@
+C:/Users/gus41/OneDrive/Escritorio/2P-RPG/cmake-build-debug/CMakeFiles/rpg.dir
+C:/Users/gus41/OneDrive/Escritorio/2P-RPG/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/gus41/OneDrive/Escritorio/2P-RPG/cmake-build-debug/CMakeFiles/rebuild_cache.dir
