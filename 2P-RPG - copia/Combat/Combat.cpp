@@ -86,7 +86,10 @@ void Combat::doCombat() {
             } else {
                 // TODO: si el enemigo tiene menos del 15% de vida, hay una probabilidad del 40% de que se defienda
                 if((*it)->getHealth() <= (*it)->getMaxHealth() * 0.15) {
-                    (*it)->boostDefense();
+                    int randomNum = rand() % 100 + 1; // genera un numero random entre 1 y 100
+                    if(randomNum <= 40) { // si el numero es menor o igual a 40, el enemigo se defiende
+                        (*it)->boostDefense();
+                    }
                 }
                 target = ((Enemy *) *it)->selectTarget(partyMembers);
             }
