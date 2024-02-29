@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/gus41/OneDrive/Escritorio/2P-RPG Vic/Pruebas/2P-RPG - copia
+# Install script for directory: C:/Users/gus41/OneDrive/Escritorio/2P-RPG Victor/Pruebas/2P-RPG Vic/Pruebas/2P-RPG - copia
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/gus41/OneDrive/Escritorio/2P-RPG Vic/Pruebas/2P-RPG - copia/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/gus41/OneDrive/Escritorio/2P-RPG Victor/Pruebas/2P-RPG Vic/Pruebas/2P-RPG - copia/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

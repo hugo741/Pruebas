@@ -1,0 +1,17 @@
+# ninja log v5
+45	1865	7308882343214999	CMakeFiles/rpg.dir/Player/Player.cpp.obj	c55f208a310b4877
+16	1911	7308882343746509	CMakeFiles/rpg.dir/Character/Character.cpp.obj	5f4d864be0f91ed7
+138	1924	7308882343881322	CMakeFiles/rpg.dir/Enemy/Enemy.cpp.obj	7557a0e38210d9c4
+27	2704	7308882351670480	CMakeFiles/rpg.dir/Combat/Combat.cpp.obj	69a11fbc237b6fb
+8	1012	7308892383702162	CMakeFiles/rpg.dir/main.cpp.obj	267d40f7d342bc4d
+1013	1372	7308892387324286	rpg.exe	d8a5ce7bac0cd161
+7	1179	7308892974922483	CMakeFiles/rpg.dir/Combat/Combat.cpp.obj	69a11fbc237b6fb
+1180	1540	7308892978472290	rpg.exe	d8a5ce7bac0cd161
+17	1205	7308894253520426	CMakeFiles/rpg.dir/Combat/Combat.cpp.obj	69a11fbc237b6fb
+1207	1483	7308894256285924	rpg.exe	d8a5ce7bac0cd161
+5	1229	7308896116719315	CMakeFiles/rpg.dir/Combat/Combat.cpp.obj	69a11fbc237b6fb
+1231	1529	7308896119643846	rpg.exe	d8a5ce7bac0cd161
+6	1166	7308900031863429	CMakeFiles/rpg.dir/Combat/Combat.cpp.obj	69a11fbc237b6fb
+1167	1480	7308900034924647	rpg.exe	d8a5ce7bac0cd161
+34	1699	7308909389251591	CMakeFiles/rpg.dir/Combat/Combat.cpp.obj	69a11fbc237b6fb
+1700	1992	7308909392099011	rpg.exe	d8a5ce7bac0cd161

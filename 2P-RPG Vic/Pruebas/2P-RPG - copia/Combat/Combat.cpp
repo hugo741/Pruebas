@@ -72,7 +72,8 @@ Character* Combat::getTarget(Character* attacker) {
     return nullptr;
 }
 
-  int aux = 0;
+  int aux_player = 0;
+  int aux_enemy = 0;
   int option = 0;
 
 void Combat::doCombat() {    
@@ -84,13 +85,14 @@ void Combat::doCombat() {
             Character* target = nullptr;
 
             if((*it)->getIsPlayer()) {
-                if(aux == 0){
+
+                if(aux_player == 0){
                     (*it)->resetDefense();
                 }
 
             cout << "Chose an option" << endl;
-            cout << "attack" << endl;
-            cout << "defend" << endl;
+            cout << "1) attack" << endl;
+            cout << "2) defend" << endl;
             cin>>option;
 
             switch (option) {
@@ -99,27 +101,32 @@ void Combat::doCombat() {
                     (*it)->doAttack(target);
                     break;
                 case 2:
+                    target = ((Player *) *it)->selectTarget(enemies);
                     (*it)->boostDefense();
-                    aux == 1;
+                    aux_player = 1;
                     break;
                 default:
                     cout << "Wrong option, try again" << endl;
                     break;
             }
 
-                //target = ((Player *) *it)->selectTarget(enemies);
             } else {
+                if (aux_enemy == 1 ){
+                    (*it)->resetDefense();
+                }
 
-
-                if((*it)->getHealth() <= (*it)->getMaxHealth() * 0.15) {
+                if((*it)->getHealth() <= ((*it)->getMaxHealth() * 0.15) && rand() %100 < 40) {
                     (*it)->boostDefense();
+                    aux_enemy = 1;
                 }
                 target = ((Enemy *) *it)->selectTarget(partyMembers);
-                aux == 0;
+                aux_player = 0;
             }
             (*it)->doAttack(target);
+
             if(target->getHealth() <= 0){
                 it = participants.erase(remove(participants.begin(), participants.end(), target), participants.end());
+
                 if(target->getIsPlayer()){
                     partyMembers.erase(remove(partyMembers.begin(), partyMembers.end(), target), partyMembers.end());
                     if(partyMembers.size() == 0){
