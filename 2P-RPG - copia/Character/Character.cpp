@@ -3,11 +3,13 @@
 //
 
 #include "Character.h"
-Character::Character(string _name, int _health, int _attack, int _defense, int _speed, bool _isPlayer) {
+Character::Character(string _name, int _health, int _max_health, int _attack, int _defense, int _original_defense, int _speed, bool _isPlayer) {
     name = _name;
     health = _health;
     attack = _attack;
+    max_health = _max_health;
     defense = _defense;
+    original_defense = _original_defense;
     speed = _speed;
     isPlayer = _isPlayer;
 }
@@ -18,6 +20,10 @@ string Character::getName() {
 
 int Character::getHealth() {
     return health;
+}
+
+int Character::getMaxHealth() {
+    return max_health;
 }
 
 int Character::getAttack() {
@@ -46,4 +52,13 @@ bool Character::flee(Character*target) {
 
     int chance = rand() % 100;
     return chance > 30;
+}
+
+void Character::boostDefense() {
+    original_defense = defense;
+    defense += defense * 0.2;
+}
+
+void Character::resetDefense() {
+    defense = original_defense;
 }

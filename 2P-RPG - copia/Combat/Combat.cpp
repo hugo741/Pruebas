@@ -72,7 +72,7 @@ Character* Combat::getTarget(Character* attacker) {
     return nullptr;
 }
 
-void Combat::doCombat() {
+void Combat::doCombat() {    
     cout<< "Inicio del combate" << endl;
     combatPrep();
     while(participants.size() > 1){
@@ -85,6 +85,9 @@ void Combat::doCombat() {
                 target = ((Player *) *it)->selectTarget(enemies);
             } else {
                 // TODO: si el enemigo tiene menos del 15% de vida, hay una probabilidad del 40% de que se defienda
+                if((*it)->getHealth() <= (*it)->getMaxHealth() * 0.15) {
+                    (*it)->boostDefense();
+                }
                 target = ((Enemy *) *it)->selectTarget(partyMembers);
             }
             (*it)->doAttack(target);
